@@ -1,0 +1,16 @@
+DGS004
+Exercise6 0 14
+an 1 x:1 y:2
+an 2 x:2 y:3
+an 3 x:2 y:1
+an 4 x:3 y:3
+an 5 x:3 y:1
+an 6 x:4 y:2
+ae a1 1 > 2 min_flow=2 max_flow=4 unit_cost=3
+ae a2 1 > 3 min_flow=3 max_flow=7 unit_cost=2
+ae a3 2 > 4 min_flow=1 max_flow=3 unit_cost=2
+ae a4 2 > 5 min_flow=0 max_flow=2 unit_cost=1
+ae a5 3 > 4 min_flow=2 max_flow=5 unit_cost=3
+ae a6 3 > 5 min_flow=2 max_flow=4 unit_cost=1
+ae a7 4 > 6 min_flow=0 max_flow=3 unit_cost=3
+ae a8 5 > 6 min_flow=1 max_flow=5 unit_cost=4
