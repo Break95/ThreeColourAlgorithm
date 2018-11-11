@@ -13,58 +13,6 @@ class ThreeColourAlgorithm {
     boolean compatibility;
 
     ThreeColourAlgorithm(){
-/*
-        graph.addNode("s");
-        graph.addNode("2");
-        graph.addNode("3");
-        graph.addNode("t");
-
-        graph.getNode("s").setAttribute("xy", 1, 2);
-        graph.getNode("2").setAttribute("xy", 2, 3);
-        graph.getNode("3").setAttribute("xy", 2, 1);
-        graph.getNode("t").setAttribute("xy", 3, 2);
-
-        graph.getNode("s").setAttribute("ui.label", "s");
-        graph.getNode("2").setAttribute("ui.label", "2");
-        graph.getNode("3").setAttribute("ui.label", "3");
-        graph.getNode("t").setAttribute("ui.label", "t");
-
-        graph.addEdge("a1","s","2", true);
-        graph.getEdge("a1").setAttribute("min_flow", "0");
-        graph.getEdge("a1").setAttribute("max_flow", "3");
-        graph.getEdge("a1").setAttribute("ui.label", "a1");
-        graph.getEdge("a1").addAttribute("ui.style", "text-background-mode: plain;");
-        graph.getEdge("a1").addAttribute("ui.style", "arrow-size: 7px, 5px;");
-
-        graph.addEdge("a2","s","3", true);
-        graph.getEdge("a2").setAttribute("min_flow", "1");
-        graph.getEdge("a2").setAttribute("max_flow", "4");
-        graph.getEdge("a2").setAttribute("ui.label", "a2");
-        graph.getEdge("a2").addAttribute("ui.style", "text-background-mode: plain;");
-        graph.getEdge("a2").addAttribute("ui.style", "arrow-size: 7px, 5px;");
-
-        graph.addEdge("a3","s","t", true);
-        graph.getEdge("a3").setAttribute("min_flow", "0");
-        graph.getEdge("a3").setAttribute("max_flow", "2");
-        graph.getEdge("a3").setAttribute("ui.label", "a3");
-        graph.getEdge("a3").addAttribute("ui.style", "text-background-mode: plain;");
-        graph.getEdge("a3").addAttribute("ui.style", "arrow-size: 7px, 5px;");
-
-        graph.addEdge("a4","2","t", true);
-        graph.getEdge("a4").setAttribute("min_flow", "1");
-        graph.getEdge("a4").setAttribute("max_flow", "4");
-        graph.getEdge("a4").setAttribute("ui.label", "a4");
-        graph.getEdge("a4").addAttribute("ui.style", "text-background-mode: plain;");
-        graph.getEdge("a4").addAttribute("ui.style", "arrow-size: 7px, 5px;");
-
-        graph.addEdge("a5","3","t", true);
-        graph.getEdge("a5").setAttribute("min_flow", "0");
-        graph.getEdge("a5").setAttribute("max_flow", "5");
-        graph.getEdge("a5").setAttribute("ui.label", "a5");
-        graph.getEdge("a5").addAttribute("ui.style", "text-background-mode: plain;");
-        graph.getEdge("a5").addAttribute("ui.style", "arrow-size: 7px, 5px;");
-*/
-
         //Default graph
         graph.addNode("1");
         graph.addNode("2");
@@ -100,7 +48,6 @@ class ThreeColourAlgorithm {
         graph.getEdge("a1").setAttribute("unit_cost", "3");
         graph.getEdge("a1").setAttribute("ui.label", "a1");
         graph.getEdge("a1").addAttribute("ui.style", "text-background-mode: plain;");
-        //graph.getEdge("a1").addAttribute("ui.style", "text-alignment: above;");
 
         graph.addEdge("a2","1","3", true);
         graph.getEdge("a2").setAttribute("min_flow", "3");
@@ -108,7 +55,6 @@ class ThreeColourAlgorithm {
         graph.getEdge("a2").setAttribute("unit_cost", "2");
         graph.getEdge("a2").setAttribute("ui.label", "a2");
         graph.getEdge("a2").addAttribute("ui.style", "text-background-mode: plain;");
-        //graph.getEdge("a2").addAttribute("ui.style", "text-alignment: above;");
 
         graph.addEdge("a3","2","4", true);
         graph.getEdge("a3").setAttribute("min_flow", "1");
@@ -116,7 +62,6 @@ class ThreeColourAlgorithm {
         graph.getEdge("a3").setAttribute("unit_cost", "2");
         graph.getEdge("a3").setAttribute("ui.label", "a3");
         graph.getEdge("a3").addAttribute("ui.style", "text-background-mode: plain;");
-        //graph.getEdge("a3").addAttribute("ui.style", "text-alignment: above;");
 
         graph.addEdge("a4","2","5", true);
         graph.getEdge("a4").setAttribute("min_flow", "0");
@@ -131,7 +76,6 @@ class ThreeColourAlgorithm {
         graph.getEdge("a5").setAttribute("unit_cost", "3");
         graph.getEdge("a5").setAttribute("ui.label", "a5");
         graph.getEdge("a5").addAttribute("ui.style", "text-background-mode: plain;");
-        graph.getEdge("a5").addAttribute("ui.style", "text-alignment: under;");
 
         graph.addEdge("a6","3","5", true);
         graph.getEdge("a6").setAttribute("min_flow", "2");

@@ -1,8 +1,6 @@
-import mdlaf.MaterialLookAndFeel;
 import org.graphstream.ui.swingViewer.ViewPanel;
 import org.graphstream.ui.view.Viewer;
 import org.graphstream.graph.*;
-import scala.util.parsing.combinator.testing.Str;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,18 +20,10 @@ public class Main {
 
     static int state = 0;
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
 
-        try{
-            //UIManager.setLookAndFeel(new MaterialLookAndFeel());
+        try {
             System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
-            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-
         } catch (Exception ex){
             ex.printStackTrace();
         }
@@ -49,8 +39,6 @@ public class Main {
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
-        //c.fill = GridBagConstraints.NONE;
-
 
         //Graph JPanel
         JPanel panel = new JPanel(new GridLayout());
@@ -68,13 +56,11 @@ public class Main {
         //Data JPanel - FLOW
         String data1 = "Flow\n";
         String data2 = String.format("%27s %5s  %5s  %5s  %5s  %5s  %5s  %5s\n", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8");
-        //String data2 = String.format("%27s %5s  %5s  %5s  %5s\n", "f1", "f2", "f3", "f4", "f5");
         String data3 = "Iteration " + iter + ": ";
         data3 += String.format(flow_format, algo.flow);
 
         data.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
         data.setEditable(false);
-        //data.setSize(150,480);
         data.insert(data1 + data2 + data3, 0);
 
         final JScrollPane scroll_data = new JScrollPane(data);
@@ -82,12 +68,10 @@ public class Main {
 
         c.gridwidth = 1;
         c.ipadx = 0;
-        //c.fill = GridBagConstraints.VERTICAL;
 
         c.ipady = 120;
         c.gridx = 0;
         c.gridy = 1;
-       // pane.add(scroll_data, c);
 
         //Info Panel
         String info1 = "Information";
@@ -102,8 +86,6 @@ public class Main {
         c.gridx = 0;
         c.gridy = 1;
         pane.add(scroll_info, c);
-
-        //frame.add(scroll_info);
 
         c.fill = GridBagConstraints.NONE;
 
@@ -141,7 +123,6 @@ public class Main {
                         state += 1;
 
                     case 2:
-                        //algo.graph.addEdge("a0", "t", "s", true);
                         algo.graph.addEdge("a0","6","1",true);
                         algo.graph.getEdge("a0").addAttribute("visited", "false");
                         algo.find_cycle(algo.selected_edge);
@@ -208,7 +189,6 @@ public class Main {
 
                     //Get cycle
                     case 2:
-                        //algo.graph.addEdge("a0", "t", "s", true);
                         algo.graph.addEdge("a0","6","1",true);
                         algo.graph.getEdge("a0").addAttribute("visited", "false");
                         algo.find_cycle(algo.selected_edge);
@@ -254,10 +234,6 @@ public class Main {
         c.gridy = 3;
         pane.add(buttons, c);
 
-        //frame.add(buttons);
-
-
-
         //Table panel
         String[] columnNames = {"","a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"};
 
@@ -276,7 +252,6 @@ public class Main {
 
         vals = new JTable(datas, columnNames);
 
-        //vals.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth =2;
 
@@ -286,11 +261,6 @@ public class Main {
         c.ipady = 33;
         JScrollPane xd = new JScrollPane(vals);
         pane.add(xd, c);
-
-        //Packing
-        //frame.pack();
-       // frame.setLocationRelativeTo(null);
-       // frame.setVisible(true);
     }
 
     private static void createUI(){
